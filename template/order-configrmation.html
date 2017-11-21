@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Document</title>
+	<title>Order Confirmation</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-status-bar-style" content="black">
@@ -43,16 +43,6 @@
 	<script src="../static/js/mui.min.js"></script>
 	<script src="../static/js/jquery.min.js"></script>
 	<script src="../static/js/vue.js"></script>
-	<script>
-
-	    mui.init({
-			swipeBack:true //启用右滑关闭功能
-		});
-
-		mui('.mui-bar-tab').on('tap','a',function(){
-            window.location.href = this.getAttribute('href');
-        });
-					
-	</script>
+	<script src="../api/orderConfirmation.js"></script>
 </body>
 </html>

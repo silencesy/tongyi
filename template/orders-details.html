@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>personal info</title>
+        <title>orders-details</title>
         <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-status-bar-style" content="black">
@@ -72,17 +72,6 @@
 
         <script src="../static/js/mui.min.js"></script>
         <script src="../static/js/clipboard.min.js"></script>
-        <script>
-            var clipboard = new Clipboard('.copybtn');
- 
-            clipboard.on('success', function(e) {
-                mui.toast('复制成功');
-                e.clearSelection();
-            });
-             
-            clipboard.on('error', function(e) {
-                mui.toast('复制失败');
-            });
-        </script>
+        <script src="../api/ordersDetails.js"></script>
     </body>
 </html>
