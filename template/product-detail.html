@@ -1,0 +1,457 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link href="../static/css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../static/css/swiper.min.css" />
+		<link rel="stylesheet" href="../static/css/style.css" />
+		<link rel="stylesheet" href="http://at.alicdn.com/t/font_259571_jmbdwkgo4etdquxr.css" />
+		<style>
+		
+			.detail-layout .mui-content {
+				background-color: #fff;
+			}
+			.mui-preview-image.mui-fullscreen {
+				position: fixed;
+				z-index: 20;
+				background-color: #000;
+			}
+			.mui-preview-header,
+			.mui-preview-footer {
+				position: absolute;
+				width: 100%;
+				left: 0;
+				z-index: 10;
+			}
+			.mui-preview-header {
+				height: 44px;
+				bottom: 0;
+			}
+			.mui-preview-footer {
+				height: 50px;
+				bottom: 0px;
+			}
+			.mui-preview-header .mui-preview-indicator {
+				display: block;
+				line-height: 25px;
+				color: #fff;
+				text-align: center;
+				margin: 15px auto 4;
+				width: 100%;
+				background-color: rgba(0, 0, 0, 0.4);
+				border-radius: 12px;
+				font-size: 16px;
+			}
+			.mui-preview-image {
+				display: none;
+				-webkit-animation-duration: 0.5s;
+				animation-duration: 0.5s;
+				-webkit-animation-fill-mode: both;
+				animation-fill-mode: both;
+			}
+			.mui-preview-image.mui-preview-in {
+				-webkit-animation-name: fadeIn;
+				animation-name: fadeIn;
+			}
+			.mui-preview-image.mui-preview-out {
+				background: none;
+				-webkit-animation-name: fadeOut;
+				animation-name: fadeOut;
+			}
+			.mui-preview-image.mui-preview-out .mui-preview-header,
+			.mui-preview-image.mui-preview-out .mui-preview-footer {
+				display: none;
+			}
+			.mui-zoom-scroller {
+				position: absolute;
+				display: -webkit-box;
+				display: -webkit-flex;
+				display: flex;
+				-webkit-box-align: center;
+				-webkit-align-items: center;
+				align-items: center;
+				-webkit-box-pack: center;
+				-webkit-justify-content: center;
+				justify-content: center;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				top: 0;
+				width: 100%;
+				height: 100%;
+				margin: 0;
+				-webkit-backface-visibility: hidden;
+			}
+			.mui-zoom {
+				-webkit-transform-style: preserve-3d;
+				transform-style: preserve-3d;
+			}
+			.mui-slider .mui-slider-group .mui-slider-item img {
+				width: auto;
+				height: auto;
+				max-width: 100%;
+				max-height: 100%;
+			}
+			.mui-android-4-1 .mui-slider .mui-slider-group .mui-slider-item img {
+				width: 100%;
+			}
+			.mui-android-4-1 .mui-slider.mui-preview-image .mui-slider-group .mui-slider-item {
+				display: inline-table;
+			}
+			.mui-android-4-1 .mui-slider.mui-preview-image .mui-zoom-scroller img {
+				display: table-cell;
+				vertical-align: middle;
+			}
+			.mui-preview-loading {
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				top: 0;
+				left: 0;
+				display: none;
+			}
+			.mui-preview-loading.mui-active {
+				display: block;
+			}
+			.mui-preview-loading .mui-spinner-white {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				margin-left: -25px;
+				margin-top: -25px;
+				height: 50px;
+				width: 50px;
+			}
+			.mui-preview-image img.mui-transitioning {
+				-webkit-transition: -webkit-transform 0.5s ease, opacity 0.5s ease;
+				transition: transform 0.5s ease, opacity 0.5s ease;
+			}
+			@-webkit-keyframes fadeIn {
+				0% {
+					opacity: 0;
+				}
+				100% {
+					opacity: 1;
+				}
+			}
+			@keyframes fadeIn {
+				0% {
+					opacity: 0;
+				}
+				100% {
+					opacity: 1;
+				}
+			}
+			@-webkit-keyframes fadeOut {
+				0% {
+					opacity: 1;
+				}
+				100% {
+					opacity: 0;
+				}
+			}
+			@keyframes fadeOut {
+				0% {
+					opacity: 1;
+				}
+				100% {
+					opacity: 0;
+				}
+			}
+			.product-detail-imgs p img {
+				max-width: 100%;
+				height: auto;
+			}
+		</style>
+	</head>
+
+	<body>
+	
+		<div class="layout detail-layout">
+			
+			<span id="goCartLogo" class="mui-icon iconfont icon-gouwuche"><span class="mui-badge">5</span></span>
+			<div id='detailMask' class="detail-mask"></div>
+			<div class="choose-info" id="chooseInfo" productId='123'>
+				<span class="iconfont icon-guanbi" id="closeChoose"></span>
+				<div class="choose-info-imgtext clearfix">
+					<img id="CategoryPic" class="choose-info-img" src="../static/images/home-product1.jpg" alt="" data-preview-src="images/home-product1.jpg" data-preview-group="2" />
+					<div class="choose-info-text">
+						<p>￥<em id="CategoryPrice">300</em></p>
+						<p>Stock <em id="inStock">50</em> (items) </p>
+					</div>
+				</div>
+				<div class="choose-classification">
+					<p>Type</p>
+					<p id="productClassList">
+						<span class="leixing active" price="300" stock="2" Category='123' imgsrc="../static/images/home-product1.jpg" bigImgSrc='images/home-product1.jpg'>Child Ticket</span>
+						<span class="leixing" price="3020" stock="2" Category='1' imgsrc="../static/images/home-product2.jpg" bigImgSrc='images/home-product2.jpg'>Adult Ticket</span>
+						<span class="leixing" price="3010" stock="3" Category='2' imgsrc="../static/images/home-product3.jpg" bigImgSrc='images/home-product3.jpg'>Child Ticket</span> 
+						<span class="leixing" price="3200" stock="4" Category='3' imgsrc="../static/images/home-product1.jpg" bigImgSrc='images/home-product1.jpg'>Adult Ticket</span> 
+						<span class="leixing" price="3100" stock="5" Category='4' imgsrc="../static/images/home-product2.jpg" bigImgSrc='images/home-product2.jpg'>Adult Ticket</span> 
+						<span class="leixing" price="3300" stock="6" Category='5' imgsrc="../static/images/home-product3.jpg" bigImgSrc='images/home-product3.jpg'>Adult Ticket</span> 
+						<span class="leixing" price="3020" stock="7" Category='56' imgsrc="../static/images/home-product1.jpg" bigImgSrc='images/home-product1.jpg'>Adult Ticket</span> 
+					</p>
+				</div>
+				<div class="choose-numbers clearfix">
+					<span class="fl">Quantity</span>
+					<div class="sub-add show fr">
+						<i class="iconfont icon-icon sub"></i>
+						<input id="productNumber" type="text" value="1">
+						<i class="iconfont icon-jia add"></i>
+					</div>
+				</div>
+				<div class="car-buy" id="maskAddPay">
+					<span id="addCartBtn">Add To Cart</span>
+					<span id="toPayBtn">To Pay</span>
+				</div>
+				<div class="car-buy base" id="maskAddTo">
+					<span id="addCartBtn2">Done</span>
+				</div>
+				<div class="car-buy base car-buy-pay" id="maskToPay">
+					<span id="toPayBtn2">Done</span>
+				</div>
+			</div>
+			<!-- 评论底部开始 -->
+			<nav class="mui-bar mui-bar-tab mui-comment-bottom">
+				<a class="comment-bottom-item" href="">
+					<span class="mui-icon iconfont icon-shanghu1"></span>
+					<span class="mui-tab-label">Homepage</span>
+				</a>
+				<a class="comment-bottom-item" href="">
+					<span class="mui-icon iconfont icon-kefu"></span>
+					<span class="mui-tab-label">Talk</span>
+				</a>
+				<a class="comment-bottom-item" href="">
+					<span class="mui-icon iconfont icon-shoucang1"></span>
+					<span class="mui-tab-label">Save</span>
+				</a>
+				<a class="comment-bottom-item addTo" href="" id="addTo">
+					<span class="mui-tab-label">Add To Cart</span>
+				</a>
+				<a class="comment-bottom-item toPay" href="" id="toPay">
+					<span class="mui-tab-label">To pay</span>
+				</a>
+			</nav>	
+			<!-- 评论底部结束 -->
+			<div class="mui-content">
+				
+				<div class="detail-carousel">
+				 	<div class="swiper-container detail-banner-carousel">
+				        <div class="swiper-wrapper">
+				            <div class="swiper-slide"><img src="../static/images/lb.jpg" data-preview-src="" data-preview-group="1" alt=""></div>
+				            <div class="swiper-slide"><img src="../static/images/lb.jpg" data-preview-src="" data-preview-group="1" alt=""></div>
+				            <div class="swiper-slide"><img src="../static/images/lb.jpg" data-preview-src="" data-preview-group="1" alt=""></div>
+				            <div class="swiper-slide"><img src="../static/images/lb.jpg" data-preview-src="" data-preview-group="1" alt=""></div>
+			    			</div>
+		    				<div class="swiper-pagination"></div>
+					</div>
+				</div>
+				
+				<div class="detail-infos">
+					<div class="detail-text-info">
+						<p class="title">Bluewater Spirit - The premium water purifier</p>
+						<p class="price">¥ 450-600</p>
+						<p class="clearfix">
+							<span class="fl">Shipping: ¥ <em>5.00</em></span>
+							<span class="fr">Shanghai</span>
+						</p>
+					</div>
+					<ul class="mui-table-view">
+						<li class="mui-table-view-cell">
+							<a class="mui-navigate-right" id="chooseColor">
+								Color Category
+							</a>
+						</li>
+						<li class="mui-table-view-cell">
+							<a href="comment.html" class="mui-navigate-right">
+								Comment（<em>2341</em>）
+							</a>
+						</li>
+					</ul>
+					<div class="comment-box">
+						<div class="comment-box-list">
+							<p class="clearfix">
+							<img src="../static/images/help2_07.png" alt="" />
+							<span>miller</span>
+							</p>
+							<p>Comment Comment Comment Comment Comment Comment Comment CommentComment Comment Comment Comment Comment Comment Comment CommentComment Comment Comment Comment Comment Comment Comment CommentComment Comment Comment Comment Comment Comment Comment CommentComment Comment Comment Comment Comment Comment Comment CommentComment Comment Comment Comment Comment Comment Comment Comment</p>
+							<p class="more-comment-box">
+								<a href="./comment.html" id="readMore" class="more-comment">Read More</a>
+							</p>
+						</div>
+					</div>
+					<p class="Details-info-title">Details</p>
+				</div>
+				<div class="mui-content-padded product-detail-imgs">
+					<p>
+						<img src="../static/images/details-img_01.png"/>
+					</p>
+					<p>
+						<img src="../static/images/details-img_02.png"/>
+					</p>
+				</div>
+			</div>
+		</div>
+		<script src="../static/js/mui.min.js"></script>
+		<script src="../static/js/swiper.min.js"></script>
+		<script src="../static/js/mui.zoom.js"></script>
+		<script src="../static/js/mui.previewimage.js"></script>
+		<script src="../static/js/h.js"></script>
+		<script type="text/javascript">
+			(function($) {
+				mui.init({
+					swipeBack:true //启用右滑关闭功能
+				});
+
+				mui.previewImage();
+				var detailCarousel = new Swiper('.detail-banner-carousel',{
+					autoplay: 4000,
+					speed: 1000,
+					autoplayDisableOnInteraction: false,
+					paginationClickable :true,
+					pagination : '.swiper-pagination',
+					paginationType : 'fraction'				
+				});
+				h('#goCartLogo').tap(function(){
+					window.location.href= "./cart.html";
+				});
+				h('#readMore').tap(function(){
+					window.location.href= this.href;
+				});
+
+				h('#chooseColor').tap(function(){
+					h('#maskToPay').hide();
+					h('#maskAddTo').hide();
+					h('#maskAddPay').show();
+					productChoosemask();
+				});
+				h('#addTo').tap(function(){
+					h('#maskToPay').hide();
+					h('#maskAddPay').hide();
+					h('#maskAddTo').show();
+					productChoosemask();
+				});
+				h('#toPay').tap(function(){
+					
+					h('#maskAddPay').hide();
+					h('#maskAddTo').hide();
+					h('#maskToPay').show();
+					productChoosemask();
+				});
+
+				// 加入购物车
+				h('#addCartBtn').tap(function(){
+					mui.toast('加入购物车成功');
+					var productId = h('#chooseInfo').attr('productId');
+					var productNumber = h('#productNumber').val();
+					var Category = '';
+					h('#productClassList').find('span').each(function(obj){
+					   
+					    if(h(obj).hasClass('active')) {
+					    	Category = h(obj).attr('Category');
+					    }
+					});
+					console.log(productId,productNumber,Category);
+					closeMask ();
+				});
+				h('#addCartBtn2').tap(function(){
+					var productId = h('#chooseInfo').attr('productId');
+					var productNumber = h('#productNumber').val();
+					var Category = '';
+					h('#productClassList').find('span').each(function(obj){
+					    
+					    if(h(obj).hasClass('active')) {
+					    	Category = h(obj).attr('Category');
+					    }
+					});
+					console.log(productId,productNumber,Category);
+					mui.toast('加入购物车成功');
+					closeMask ();
+				});
+				// 购买
+				h('#toPayBtn').tap(function(){
+					var productId = h('#chooseInfo').attr('productId');
+					var productNumber = h('#productNumber').val();
+					var Category = '';
+					h('#productClassList').find('span').each(function(obj){
+					   
+					    if(h(obj).hasClass('active')) {
+					    	Category = h(obj).attr('Category');
+					    }
+					});
+					console.log(productId,productNumber,Category);
+					closeMask ();
+				});
+				h('#toPayBtn2').tap(function(){
+					var productId = h('#chooseInfo').attr('productId');
+					var productNumber = h('#productNumber').val();
+					var Category = '';
+					h('#productClassList').find('span').each(function(obj){
+					    
+					    if(h(obj).hasClass('active')) {
+					    	Category = h(obj).attr('Category');
+					    }
+					});
+					console.log(productId,productNumber,Category);
+					closeMask ();
+				});
+				// 点击关闭按钮关闭弹出层
+				h('#closeChoose').tap(function(){
+					closeMask ();
+				});
+				// 点击遮罩层关闭弹出层
+				h('#detailMask').tap(function(){
+					closeMask ();
+				});
+
+				// 关闭弹出层
+				function closeMask () {
+					h('#detailMask').hide();
+					h('#chooseInfo').css({"bottom":'-420px'});
+				}
+				mui('#productClassList').on('tap',".leixing",function(){
+					h('#productClassList').find('span').each(function(obj){
+					    h(obj).removeClass('active');
+					});
+					h(this).addClass('active');
+					h('#CategoryPrice').html(h(this).attr('price'));
+					h('#inStock').html(h(this).attr('stock'));
+					h('#CategoryPic').attr("src",h(this).attr('imgsrc'));
+					h('#CategoryPic').attr("data-preview-src",h(this).attr('bigImgSrc'));
+				})
+				function productChoosemask() {
+				// 弹出选择信息
+					h('#detailMask').show();
+					h('#chooseInfo').css({"bottom":0});
+				}
+				mui('.sub-add').on('tap','.sub',function(){
+		            var n = this.nextElementSibling.value || 2;
+		            console.log(n);
+					var num = parseInt(n)-1;
+			        if (num == 1) {
+			           this.style.color = "#D5D5D5";
+			        }
+					if(num==0){
+			            return;
+			        }
+					this.nextElementSibling.value = num;
+					return false;
+	
+		        });
+		        mui('.sub-add').on('tap','.add',function(){
+		            this.previousElementSibling.previousElementSibling.style.color = "#A9A9A9";
+				 	var n = this.previousElementSibling.value || 1;
+				 	var num=parseInt(n)+1;
+				 	this.previousElementSibling.value = num;
+				 	return false;
+		        });
+			})(mui);
+		</script>
+	</body>
+
+</html>
