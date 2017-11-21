@@ -1,11 +1,14 @@
 (function(mui) {
-			var backTimer = null;
+		var backTimer = null;
   		var isTop = true;
   		var clientHeight = document.documentElement.clientHeight;
   		var backBtn = document.getElementById('backBtn');
   		var getCode = document.getElementById('getCode');
+  		var submitEmail = document.getElementById('loginBtn');
 		var countdown=60;
+		var source = getQueryString('source');
 		search();
+		isBindEmail ();
 		getCode.addEventListener('tap',function(){
 			var phoneNumber = document.getElementById('phoneNumber').value;
 			var code = document.getElementById('code').value;
@@ -18,7 +21,45 @@
 			}	
 			settime(this);
 
-		})
+		});
+			
+
+		// });
+		mui('.login-btn').on('tap','#loginBtn2',function(){
+            var email = $.trim($("#emailtext").val());
+			var phoneNumber = localStorage.getItem("phoneNumber");
+
+			if (!email) {
+				mui.toast("请输入邮箱");
+				return false;
+			} else if (!(/^(\w-*\.*)+@(\w-?)+(\.\w{2,})+$/.test(email))) {
+				mui.toast("请输入正确邮箱");
+				return false;
+			} 
+
+			$.ajax({
+				url: 'http://proj7.thatsmags.com/Api/Account/mbBind',
+				type: 'POST',
+				dataType: 'json',
+				data: {mobile: phoneNumber,email: email},
+			})
+			.done(function(data) {
+				console.log(data);
+				if (data.message == "mobile_bind_success") {
+					var token = data.data.token;
+					localStorage.setItem("token",token);
+					localStorage.clear("isBindEmail");
+					$('.home-mask2').hide();
+				}
+				console.log(data);
+			})
+			.fail(function() {
+				mui.toast("数据请求失败，稍后再试!");
+			})
+			.always(function() {
+				console.log("complete");
+			});
+       	});
 		mui.init({
 			swipeBack:true //启用右滑关闭功能
 		});
@@ -28,7 +69,12 @@
             window.location.href = this.getAttribute('href');
        	});
        
-
+		function isBindEmail () {
+			var isBindEmail = localStorage.getItem("isBindEmail");
+			if (isBindEmail == 0) {
+				$('.home-mask2').show();
+			}
+		}
 	   
 
         document.getElementById('backBtn').addEventListener('tap',function(){
@@ -126,7 +172,7 @@
 		    var height = bannerBox.offsetHeight;
 		    window.onscroll = function(){
 		        var top = document.body.scrollTop || document.documentElement.scrollTop;
-		        console.log(top,height,bannerBox);
+		        // console.log(top,height,bannerBox);
 		        var opacity = 0;
 		        if(top > height){
 		            opacity = 0.95;
@@ -143,32 +189,17 @@
 		    }
 		}
 
-		// //滚动条滚动时触发
-		// window.onscroll = function() {
-		// //显示回到顶部按钮
-		// var osTop = document.documentElement.scrollTop || document.body.scrollTop;
-		// if (osTop >= clientHeight) {
-		//   	backBtn.style.display = "block";
-		// } else {
-		//   	backBtn.style.display = "none";
-		// };
-		// if(osTop < 300 && osTop > 0){
-		// 	var opacity = Math.abs(osTop)/300;
-		// 	// console.log(opacity);
-		// 	document.getElementById('searchBg').style.opacity = opacity;
-		// 	// console.log(searchBg);
-		// }
-		// if (osTop > 300) {
-		// 	document.getElementById('searchBg').style.opacity = 1;
-		// }
-		// if (osTop < 50 && osTop > 0) {
-		// 	document.getElementById('searchBg').style.opacity = 0;
-		// }
-		// // 回到顶部过程中用户滚动滚动条，停止定时器
-		// if (!isTop) {
-		//   clearInterval(backTimer);
-		// };
-		// isTop = false;
+		// function() {
 
-		// };
+		// }
+
+		
+		function getQueryString(name) {
+		var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i');
+			var r = window.location.search.substr(1).match(reg);
+		if (r != null) {
+			return unescape(r[2]);
+		}
+			return null;
+		}
 		})(mui);
