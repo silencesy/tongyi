@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Add a new address</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<link rel="stylesheet" href="css/mui.min.css">
+	<link href="css/mui.picker.all.css" rel="stylesheet" />
+	<link href="css/mui.poppicker.css" rel="stylesheet" />
+	<link rel="stylesheet" href="css/style.css">
+	<!-- 字体图标 -->
+	<link rel="stylesheet" href="http://at.alicdn.com/t/font_259571_py0uecagdjrcz0k9.css">
+</head>
+<body>
+	<div class="layout layout-city">
+		<header id="header" class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">Add a new address</h1>
+			<button id="subto" class="mui-btn mui-btn-blue mui-btn-link mui-pull-right add-btn">Done</button>
+		</header>
+		<div class="mui-content addressContent">
+			<div class="mui-input-group" id="inputAdd">
+				<div class="mui-input-row">
+					<label>Full&nbsp;name：</label>
+					<input type="text"  id="name" placeholder="" >
+				</div>				
+				<div class="mui-input-row">
+					<label>Phone&nbsp;number：</label>
+					<input type="text"  id="number" placeholder="" >
+				</div>				
+				<!-- 三级联动开始 -->
+	    		<div id="showCityPicker3" class="mui-input-row">
+	    			<label class="region">Select&nbsp;region：</label>
+	    			<input type="" name="" id="cityResult3" value="" />
+	    			
+	    		</div>
+	    		<!-- 三级联动结束 -->
+	    		<textarea id="textarea" rows="5" placeholder="Please fill in the details"></textarea>
+			</div> 
+			<div class="mui-input-row mui-checkbox mui-left setDefault">
+			  	<label>Set as Default</label>
+			  	<input name="checkbox1" value="Item 1" type="checkbox">
+			</div>
+		</div>
+	</div>
+
+	<script src="js/mui.min.js"></script>
+	<script src="js/mui.picker.min.js"></script>
+	<script src="js/mui.poppicker.js"></script>
+	<script src="js/city.data-3.js" type="text/javascript" charset="utf-8"></script>
+	<script>
+		(function($, doc) {
+			$.init();
+			$.ready(function() {
+				var _getParam = function(obj, param) {
+					return obj[param] || '';
+				};					
+				var showUserPickerButton = doc.getElementById('showUserPicker');
+				var userResult = doc.getElementById('userResult');				
+				//三级联动
+				var cityPicker3 = new $.PopPicker({
+					layer: 3
+				});
+				cityPicker3.setData(cityData3);
+				var showCityPickerButton = doc.getElementById('showCityPicker3');
+				var cityResult3 = doc.getElementById('cityResult3');
+				showCityPickerButton.addEventListener('tap', function(event) {
+					cityPicker3.show(function(items) {
+						cityResult3.value = _getParam(items[0], 'text') + " " + _getParam(items[1], 'text') + " " + _getParam(items[2], 'text');
+						//返回 false 可以阻止选择框的关闭
+						//return false;
+					});
+				}, false);
+				//输入框校验开始
+				var subto = document.getElementById('subto');
+				subto.addEventListener('tap',function() {
+					var tel = /^1[34578]\d{9}$/;
+					var name = document.getElementById('name').value;
+					var theNumber = document.getElementById('number').value;
+					var cityResult3 = document.getElementById('cityResult3').value;
+					var theTextarea = document.getElementById('textarea').value;
+					console.log(name,theNumber,cityResult3,theTextarea)
+					if(name == '') {
+						mui.toast('Please enter your name!');
+						return false
+					}else if(!tel.test(theNumber)) {
+							mui.toast('Please enter a 11-digit vaild number!');
+						return false
+					}else if(cityResult3 == '') {
+						mui.toast('Please select your region!');
+						return false
+					}else if(theTextarea == '') {		
+						mui.toast('Please write down your detailed address!');
+						return false
+					}
+					return mui.toast('ok');
+				});
+				//输入框校验结束				
+			});
+		})(mui, document);			
+	</script>
+</body>
+</html>

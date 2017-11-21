@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>favourite</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<link rel="stylesheet" href="css/mui.min.css">
+	<link rel="stylesheet" href="css/style.css">
+	<!-- 字体图标 -->
+	<link rel="stylesheet" href="http://at.alicdn.com/t/font_259571_py0uecagdjrcz0k9.css">
+</head>
+<body>
+	<div class="layout favourite-layout">
+		<header id="header" class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">My Favourite</h1>
+		</header>
+		<div class="mui-content mui-favourite-content">
+		    <div class="table-card">
+		        <ul class="tab-btn">
+		           <li class="tab-active">Products</li>
+		           <li>Shops</li>
+		        </ul>
+		        <div class="tab-con">
+		            <div class="tab-on products tab-container">
+		                <ul>
+							1
+		                </ul>
+		            </div>
+
+		            <div class="shops tab-container">
+		                <ul>
+			                <li class="shops-list">
+								<div class="shops-left">
+									<img src="images/blue.png" alt="">
+									<span>Bluewater</span>
+								</div>
+								<p class="shops-right">Delete</p>			
+							</li>
+			                <li class="shops-list">
+								<div class="shops-left">
+									<img src="images/blue.png" alt="">
+									<span>Bluewater</span>
+								</div>
+								<p class="shops-right">Delete</p>			
+							</li>
+			                <li class="shops-list">
+								<div class="shops-left">
+									<img src="images/blue.png" alt="">
+									<span>Bluewater</span>
+								</div>
+								<p class="shops-right">Delete</p>			
+							</li>
+			                <li class="shops-list">
+								<div class="shops-left">
+									<img src="images/blue.png" alt="">
+									<span>Bluewater</span>
+								</div>
+								<p class="shops-right">Delete</p>			
+							</li>
+			                <li class="shops-list">
+								<div class="shops-left">
+									<img src="images/blue.png" alt="">
+									<span>Bluewater</span>
+								</div>
+								<p class="shops-right">Delete</p>			
+							</li>
+			                <li class="shops-list">
+								<div class="shops-left">
+									<img src="images/blue.png" alt="">
+									<span>Bluewater</span>
+								</div>
+								<p class="shops-right">Delete</p>			
+							</li>
+			                <li class="shops-list">
+								<div class="shops-left">
+									<img src="images/blue.png" alt="">
+									<span>Bluewater</span>
+								</div>
+								<p class="shops-right">Delete</p>			
+							</li>							
+		                </ul>
+		            </div>
+
+		        </div>
+		    </div>
+		</div>
+	</div>
+
+	<script src="js/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+	        $(".tab-btn >li").click(function(){
+				$(".tab-btn >li").eq($(this).index()).addClass("tab-active").siblings().removeClass("tab-active");
+				$(".tab-con >div").hide().eq($(this).index()).show();
+			});
+	        $(".shops-right").click(function(){
+				$(this).parent(".shops-list").css("display","none");
+			});
+		});
+	</script>
+</body>
+</html>

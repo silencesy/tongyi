@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>comments-page</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="stylesheet" href="css/mui.min.css">
+        <link rel="stylesheet" href="css/style.css">
+        <!-- 字体图标 -->
+        <link rel="stylesheet" href="http://at.alicdn.com/t/font_259571_y2nyratgm34n29.css">
+        <style>
+            .feedback body {
+                background-color: #EFEFF4;
+            }
+            .feedback input,
+            .feedback textarea {
+                border: none !important;
+            }
+            .feedback textarea {
+                height: 100px;
+                margin-bottom: 0 !important;
+                padding-bottom: 0 !important;
+            }
+            .feedback .row {
+                width: 100%;
+                background-color: #fff;
+            }
+            .feedback p {
+                padding: 10px 15px 0;
+            }
+            .feedback button#submit { 
+                width: 90%;
+                height: 46px;
+                left: 50%;
+                -webkit-transform: translate(-50%);
+            }
+            .feedback .hidden {
+                display: none;
+            }
+            .feedback .image-list {
+                width: 100%;
+                height: 85px;
+                background-size: cover;
+                padding: 10px 10px;
+                overflow: hidden;
+            }
+            .feedback .image-item {
+                width: 65px;
+                height: 65px;
+                background-image: url(./images/iconfont-tianjia.png);
+                background-size: 100% 100%;
+                display: inline-block;
+                position: relative;
+                border-radius: 5px;
+                margin-right: 10px;
+                margin-bottom: 10px;
+                border: solid 1px #e8e8e8;
+            }
+            .feedback .image-item input[type="file"] {
+                position: absolute;
+                left: 0px;
+                top: 0px;
+                width: 100%;
+                height: 100%;
+                opacity: 0;
+                cursor: pointer;
+                z-index: 0;
+            }
+            .feedback .image-item.space {
+                border: none;
+            }
+            .feedback .image-item .image-close {
+                position: absolute;
+                display: inline-block;
+                right: -6px;
+                top: -6px;
+                width: 20px;
+                height: 20px;
+                text-align: center;
+                line-height: 20px;
+                border-radius: 12px;
+                background-color: #FF5053;
+                color: #f3f3f3;
+                border: solid 1px #FF5053;
+                font-size: 9px;
+                font-weight: 200;
+                z-index: 1;
+            }
+            .feedback .image-item.space .image-close {
+                display: none;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="layout comments-page-layout">
+            <button class="comments-btn" id="submit">Submit</button>
+            <div class="mui-content feedback">
+                <ul class="mui-table-view result-ul">
+                    <li class="mui-table-view-cell">
+                        <a href="#">
+                            <img class="list-li-img" src="images/prodeuctdemo.png">
+                            <div class="product-list-info">
+                                <p>itemitemitemitemitemitemiteemitemitemitemiteemitemitemitemiteemitemitemitemiteemitemitemitemiteemitemitemitemitemitemitemitemitem</p>
+                            </div>
+                        </a>
+                    </li>       
+                </ul>
+                <div class="row mui-input-row">
+                    <textarea id='question' class="mui-input-clear question" placeholder="请详细描述你的问题和意见..."></textarea>
+                </div>
+                <div id='image-list' class="row image-list"></div>
+            </div>
+        </div>
+
+        <script src="js/mui.min.js"></script>
+        <script src="js/feedback-page.js"></script>
+        <script src="js/feedback.js"></script>
+        <script>
+            
+        </script>
+    </body>
+</html>

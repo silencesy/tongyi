@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<link rel="stylesheet" href="css/mui.min.css">
+	<link rel="stylesheet" href="css/swiper.min.css" />
+	<link rel="stylesheet" type="text/css" href="css/mui.picker.all.css"/>
+	<link rel="stylesheet" type="text/css" href="css/mui.poppicker.css"/>
+	<link rel="stylesheet" href="css/style.css">
+	<!-- 字体图标 -->
+	<link rel="stylesheet" href="http://at.alicdn.com/t/font_259571_yqwj8mnylwwdygb9.css">
+</head>
+<body>
+	
+	
+	
+	<div class="layout home-layout" >
+			<nav class="mui-bar mui-bar-tab">
+				<a class="mui-tab-item mui-active" href="./home-page.html">
+					<span class="mui-icon iconfont icon-shanghu1"></span>
+					<span class="mui-tab-label">Home</span>
+				</a>
+				<a class="mui-tab-item" href="./cart.html">
+					<span class="mui-icon iconfont icon-gouwuche"><span class="mui-badge">5</span></span>
+					<span class="mui-tab-label">Cart</span>
+				</a>
+				<a class="mui-tab-item" href="./me.html">
+					<span class="mui-icon iconfont icon-me"></span>
+					<span class="mui-tab-label">Me</span>
+				</a>
+				<a class="mui-tab-item" href="./more.html">
+					<span class="mui-icon iconfont icon-iconfonthome"></span>
+					<span class="mui-tab-label">More</span>
+				</a>
+			</nav>
+			<div class="home-search-group">
+				<div class="clearfix">
+					<span id='showUserPicker'>All <i class="fr iconfont icon-xiangxiajiantou"></i></span>
+					<input id="searchInput" class="searchInput" type="text" placeholder="Search"/>
+					<i class="iconfont icon-sousuo"></i>
+				</div>
+			</div>
+			<div id="searchBg" class="search-bg"></div>
+			<span id="backBtn" class="iconfont icon-fanhuidingbu"></span>
+			
+			<div class="home-mask home-mask1">
+				<div class="home-mask-form">
+					<p>Please complete the imformation</p>
+					<div class="login-phonenumber">
+						<input id="phoneNumber" type="text" placeholder="Enter phone number">
+						<button id="getCode" type="button" class="mui-btn">Send Code</button>
+					</div>
+					<div class="login-code">
+						<input id="code" type="text" placeholder="Enter verification code " />
+					</div>
+					<div class="login-email">
+						<input id="code" type="text" placeholder="Email address" />
+					</div>
+					<div class="login-btn">
+						<button type="button" id="loginBtn" class="mui-btn">Submit</button>
+					</div>
+				</div>
+			</div>
+			<div class="home-mask home-mask2">
+				<div class="home-mask-form">
+					<p>Please complete the imformation</p>
+					<div class="login-email">
+						<input id="code" type="text" placeholder="Email address" />
+					</div>
+					<div class="login-btn">
+						<button type="button" id="loginBtn" class="mui-btn">Submit</button>
+					</div>
+				</div>
+			</div>
+			
+			<div class="mui-content">
+				
+				<!-- 首页轮播开始 -->
+				<div class="home-carousel">
+				 	<div class="swiper-container home-banner-carousel">
+				        <div class="swiper-wrapper">
+				            <div class="swiper-slide"><a href="./product-detail.html"><img src="images/lb.jpg" alt=""></a></div>
+				            <div class="swiper-slide"><a href="#"><img src="images/lb.jpg" alt=""></a></div>
+				            <div class="swiper-slide"><a href="#"><img src="images/lb.jpg" alt=""></a></div>
+				            <div class="swiper-slide"><a href="#"><img src="images/lb.jpg" alt=""></a></div>
+			    		</div>
+		    			<div class="swiper-pagination"></div>
+					</div>
+				<!-- 首页轮播结束 -->
+				<div class="home-section-box">
+					<div class="section-head section-head-one">
+						<span class="section-head-text">Featured shops</span>
+						<div class="home-line"></div>
+						<a href="#" class="home-more">More</a>
+					</div>
+					<div class="home-product-carousel-box">
+						<div class="swiper-container home-product-carousel">
+					        <div class="swiper-wrapper">
+					            <div class="swiper-slide product-lists">
+					            		<a href="./product-detail.html">
+					            			<img src="images/products.jpg" alt="" />
+										<p>adidas</p>
+					            		</a>
+					            </div>
+					            <div class="swiper-slide product-lists">
+					            		<a href="#">
+					            			<img src="images/products.jpg" alt="" />
+										<p>adidas</p>
+					            		</a>
+					            </div>
+					            <div class="swiper-slide product-lists">
+					            		<a href="#">
+					            			<img src="images/products.jpg" alt="" />
+										<p>adidas</p>
+					            		</a>
+					            </div>
+					            <div class="swiper-slide product-lists">
+					            		<a href="#">
+					            			<img src="images/products.jpg" alt="" />
+										<p>adidas</p>
+					            		</a>
+					            </div>
+					            <div class="swiper-slide product-lists">
+					            		<a href="#">
+					            			<img src="images/products.jpg" alt="" />
+										<p>adidas</p>
+					            		</a>
+					            </div>
+					            <div class="swiper-slide product-lists">
+					            		<a href="#">
+					            			<img src="images/products.jpg" alt="" />
+										<p>adidas</p>
+					            		</a>
+					            </div>
+					            
+					        </div>
+					        <!-- Add Pagination -->
+					        <div class="swiper-scrollbar"></div>
+					    </div>
+					</div>
+				</div>
+				<div class="home-ad">
+					<a href="#">
+						<img src="images/home-ad1.jpg" alt="" />
+					</a>
+				</div>
+				<div class="home-section-box">
+					<div class="section-head">
+						<span class="section-head-text">Featured products</span>
+						<div class="home-line home-line-two"></div>
+						<a href="#" class="home-more">More</a>
+					</div>
+					<div class="home-product-carousel-box home-product-carousel-box2">
+						<div class="swiper-container home-product-carousel">
+					        <div class="swiper-wrapper">
+					            <div class="swiper-slide product-lists">
+					            		<a href="#">
+					            			<img src="images/products.jpg" alt="" />
+											<p>adidasadidasaddidasadidasaddidasadidasaddidasadidasaddidasadidasadidasadidasadidasadidasadidas</p>
+											<p>￥430.50</p>
+											<p>￥349.50</p>
+					            		</a>
+					            </div>
+					            <div class="swiper-slide product-lists">
+					            		<a href="#">
+					            			<img src="images/products.jpg" alt="" />
+											<p>adidas</p>
+											<p>￥430.50</p>
+											<p>￥349.50</p>
+					            		</a>
+					            </div>
+					            <div class="swiper-slide product-lists">
+					            		<a href="#">
+					            			<img src="images/products.jpg" alt="" />
+											<p>adidas</p>
+											<p>￥430.50</p>
+											<p>￥349.50</p>
+					            		</a>
+					            </div>
+					            <div class="swiper-slide product-lists">
+					            		<a href="#">
+					            			<img src="images/products.jpg" alt="" />
+											<p>adidas</p>
+											<p>￥430.50</p>
+											<p>￥349.50</p>
+					            		</a>
+					            </div>
+					            <div class="swiper-slide product-lists">
+					            		<a href="#">
+					            			<img src="images/products.jpg" alt="" />
+											<p>adidas</p>
+											<p>￥430.50</p>
+											<p>￥349.50</p>
+					            		</a>
+					            </div>
+					            <div class="swiper-slide product-lists">
+					            		<a href="#">
+					            			<img src="images/products.jpg" alt="" />
+											<p>adidas</p>
+											<p>￥430.50</p>
+											<p>￥349.50</p>
+					            		</a>
+					            </div>
+					            
+					        </div>
+					        <!-- Add Pagination -->
+					        <div class="swiper-scrollbar"></div>
+					    </div>
+					</div>
+				</div>
+				<div class="home-ad">
+					<a href="#">
+						<img src="images/home-ad2.jpg" alt="" />
+					</a>
+				</div>
+				<div class="home-section-box">
+					<div class="section-head">
+						<span class="section-head-text">Editor’s pick</span>
+						<div class="home-line home-line-three"></div>
+						<a href="#" class="home-more">More</a>
+					</div>
+					<ul class="mui-table-view result-ul home-pick-list">
+						<li class="mui-table-view-cell">
+							<a href="#">
+								<img class="list-li-img" src="images/home-product1.jpg">
+								<div class="product-list-info">
+									<p>itemitemitmitemitemitemitemitemitmitemitemitemitemitemitmitemitemitemitemitemitmitemitemitem</p>
+									<em>2017-10-24</em>
+								</div>
+							</a>
+						</li>
+						<li class="mui-table-view-cell">
+							<a href="#">
+								<img class="list-li-img" src="images/home-product2.jpg">
+								<div class="product-list-info">
+									<p>itemitemitmitemitemitemitemitemitmitemitemitemitemitemitmitemitemitemitemitemitmitemitemitem</p>
+									<em>2017-10-24</em>
+								</div>
+							</a>
+						</li>	
+						<li class="mui-table-view-cell">
+							<a href="#">
+								<img class="list-li-img" src="images/home-product3.jpg">
+								<div class="product-list-info">
+									<p>itemitemitmitemitemitemitemitemitmitemitemitemitemitemitmitemitemitemitemitemitmitemitemitem</p>
+									<em>2017-10-24</em>
+								</div>
+							</a>
+						</li>	
+					</ul>
+				</div>
+				<div class="home-ad">
+					<a href="me.html">
+						<img src="images/home-ad3.jpg" alt="" />
+					</a>
+				</div>
+				<div class="classification">
+					<ul class="mui-table-view">
+						<li class="mui-table-view-cell">
+							<a href="./cart-empty.html">
+								<img src="images/home-class1.jpg" alt="" />
+							</a>
+						</li>
+						<li class="mui-table-view-cell">
+							<a href="./cart.html">
+								<img src="images/home-class2.jpg" alt="" />
+							</a>
+						</li>
+						<li class="mui-table-view-cell">
+							<a href="#">
+								<img src="images/home-class3.jpg" alt="" />
+							</a>
+						</li>
+						<li class="mui-table-view-cell">
+							<a href="#">
+								<img src="images/home-class4.png" alt="" />
+							</a>
+						</li>
+					</ul>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+
+	<script src="js/mui.min.js"></script>
+	<script src="js/mui.picker.min.js"></script>
+	<script src="js/mui.poppicker.js"></script>
+	<script src="js/swiper.min.js"></script>
+	<script>
+		(function(mui) {
+			var backTimer = null;
+  		var isTop = true;
+  		var clientHeight = document.documentElement.clientHeight;
+  		var backBtn = document.getElementById('backBtn');
+  		var getCode = document.getElementById('getCode');
+		var countdown=60;
+		search();
+		getCode.addEventListener('tap',function(){
+			var phoneNumber = document.getElementById('phoneNumber').value;
+			var code = document.getElementById('code').value;
+			if (!phoneNumber) {
+				mui.toast('Please enter your number!');
+				return;
+			} else if (!(/^1[34578]\d{9}$/.test(phoneNumber))) {
+				mui.toast("Please enter a 11-digit valid number!");
+				return;
+			}	
+			settime(this);
+
+		})
+		mui.init({
+			swipeBack:true //启用右滑关闭功能
+		});
+
+		//		底部页面跳转
+		mui('body').on('tap','a',function(){
+            window.location.href = this.getAttribute('href');
+       	});
+       
+
+	   
+
+        document.getElementById('backBtn').addEventListener('tap',function(){
+       		 backTimer = setInterval(function(){
+		      //获取滚动条距离顶部高度
+		      var osTop = document.documentElement.scrollTop || document.body.scrollTop;
+		      var ispeed = Math.floor(-osTop / 7);
+		       
+		      document.documentElement.scrollTop = document.body.scrollTop = osTop+ispeed;
+		      //到达顶部，清除定时器
+		      if (osTop == 0) {
+		        clearInterval(backTimer);
+		      };
+		      isTop = true;
+		       
+		    },20);
+       });
+
+		//返回按钮tap
+		// backBtn.addEventListener('tap', function(e) {
+		// 	mui.scrollTo(0,500);
+		// });
+
+
+       
+
+		
+		//		首页第一个轮播
+        var homeBannerCarousel = new Swiper('.home-banner-carousel',{
+			loop: true,
+			autoplay: 4000,
+			speed: 1000,
+			autoplayDisableOnInteraction: false,
+			pagination : '.swiper-pagination',
+			paginationClickable :true				
+		});
+		//		首页第二个轮播
+		var homeProductCarousel = new Swiper('.home-product-carousel',{
+	        scrollbar: '.swiper-scrollbar',
+	        scrollbarHide: true,
+	        slidesPerView: 'auto',
+	        freeMode : true,
+	        spaceBetween: 5,
+	        slidesPerView: 3.2,
+	        grabCursor: true
+		});
+		//搜索分类
+		var userPicker = new mui.PopPicker();
+		userPicker.setData([{
+			value: 'All',
+			text: 'All'
+		},{
+			value: 'Shops',
+			text: 'Shops'
+		}, {
+			value: 'Products',
+			text: 'Products'
+		}, {
+			value: 'Ticketing',
+			text: 'Ticketing'
+		}, {
+			value: 'Coupons',
+			text: 'Coupons'
+		}]);
+		var showUserPickerButton = document.getElementById('showUserPicker');
+		showUserPickerButton.addEventListener('tap', function(event) {
+			userPicker.show(function(items) {
+				showUserPickerButton.innerHTML = items[0].text + '<i class="iconfont icon-xiangxiajiantou fr"></i>';
+			});
+		}, false);
+
+		function settime(obj) {   
+			if (countdown == 0) {   
+			    obj.removeAttribute("disabled");  
+			    obj.style.backgroundColor = "#fc4002";  
+			    obj.style.color = "#fff"; 
+			    obj.innerText="Send code";   
+			    countdown = 60;   
+			    return;  
+			} else {   
+			    obj.setAttribute("disabled", true);
+			    obj.style.backgroundColor = "#6A6A6A"; 
+			    obj.style.color = "#fff";   
+			    obj.innerText = countdown+ "s";   
+			    countdown--;   
+			}   
+			setTimeout(function() {   
+			    settime(obj);
+			},1000);
+		} 
+
+		function search(){
+		    var searchBox = document.querySelector('#searchBg');
+		    var bannerBox = document.querySelector('.home-banner-carousel');
+		    var height = bannerBox.offsetHeight;
+		    window.onscroll = function(){
+		        var top = document.body.scrollTop || document.documentElement.scrollTop;
+		        console.log(top,height,bannerBox);
+		        var opacity = 0;
+		        if(top > height){
+		            opacity = 0.95;
+		        }
+		        else{
+		            opacity = 0.95 * (top/height);
+		        }
+		        if (top >= clientHeight) {
+				  	backBtn.style.display = "block";
+				} else {
+				  	backBtn.style.display = "none";
+				};
+		        searchBox.style.background = "rgba(246,67,44,"+opacity+")";
+		    }
+		}
+
+		// //滚动条滚动时触发
+		// window.onscroll = function() {
+		// //显示回到顶部按钮
+		// var osTop = document.documentElement.scrollTop || document.body.scrollTop;
+		// if (osTop >= clientHeight) {
+		//   	backBtn.style.display = "block";
+		// } else {
+		//   	backBtn.style.display = "none";
+		// };
+		// if(osTop < 300 && osTop > 0){
+		// 	var opacity = Math.abs(osTop)/300;
+		// 	// console.log(opacity);
+		// 	document.getElementById('searchBg').style.opacity = opacity;
+		// 	// console.log(searchBg);
+		// }
+		// if (osTop > 300) {
+		// 	document.getElementById('searchBg').style.opacity = 1;
+		// }
+		// if (osTop < 50 && osTop > 0) {
+		// 	document.getElementById('searchBg').style.opacity = 0;
+		// }
+		// // 回到顶部过程中用户滚动滚动条，停止定时器
+		// if (!isTop) {
+		//   clearInterval(backTimer);
+		// };
+		// isTop = false;
+
+		// };
+		})(mui);
+		
+
+			
+		  	
+
+	</script>
+</body>
+</html>

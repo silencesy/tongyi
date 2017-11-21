@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>search-all</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<link rel="stylesheet" href="css/mui.min.css">
+	<link rel="stylesheet" href="css/style.css">
+	<!-- 字体图标 -->
+	<link rel="stylesheet" href="http://at.alicdn.com/t/font_259571_b86z5o3kc56zuxr.css">
+	<style type="text/css">
+		#list {
+			/*避免导航边框和列表背景边框重叠，看起来像两条边框似得；*/
+			margin-top: -1px;
+		}
+	</style>
+</head>
+<body>
+	<div class="layout search-result-layout">
+		<header id="header" class="mui-bar mui-bar-nav search-all-header">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left shop-search-left"></a>
+			<div class="shop-search-input">
+				<input class="search-input" type="text" placeholder="Search"/>
+				<i class="iconfont icon-sousuo"></i>
+			</div>
+			<div class="search-rank">
+				<span class="rank-sales">Sales</span>
+				<div class="rank-jiantou">
+					<span class="iconfont icon-xiangshangjiantou-copy-copy-copy-copy jiantou1"></span>
+					<span class="iconfont icon-xiangshangjiantou-copy-copy-copy jiantou2"></span>
+				</div>
+				<span class="rank-price">Price</span>
+				<div class="rank-jiantou2">
+					<span class="iconfont icon-xiangshangjiantou-copy-copy-copy-copy"></span>
+					<span class="iconfont icon-xiangshangjiantou-copy-copy-copy"></span>
+				</div>
+			</div>
+		</header>
+		<nav class="mui-bar mui-bar-tab">
+			<a class="mui-tab-item" href="./home-page.html">
+				<span class="mui-icon iconfont icon-shanghu1"></span>
+				<span class="mui-tab-label">Home</span>
+			</a>
+			<a class="mui-tab-item" href="./cart.html">
+				<span class="mui-icon iconfont icon-gouwuche"><span class="mui-badge">9</span></span>
+				<span class="mui-tab-label">Cart</span>
+			</a>
+			<a class="mui-tab-item" href="./me.html">
+				<span class="mui-icon iconfont icon-me"></span>
+				<span class="mui-tab-label">Me</span>
+			</a>
+			<a class="mui-tab-item" href="./more.html">
+				<span class="mui-icon iconfont icon-iconfonthome"></span>
+				<span class="mui-tab-label">More</span>
+			</a>
+		</nav>
+		<div class="mui-content  mui-content-result">
+			<div class="wrapper-result">
+				<ul class="wall wall-content">
+					<li class="waterfall">
+						<a href="#">
+							<img class="lazy" data-original="images/yashilandai.jpg" />
+							<p>Shanghai Restaurant Review: Kun Thai Shanghai Restaurant Review: Kun Thai</p>
+							<span class="water-left">￥<span class="postage-number">3928</span></span>
+							<span class="iconfont icon-gouwuche water-right"></span>
+						</a>
+					</li>
+					<li class="waterfall">
+						<a href="#">
+							<img class="lazy" data-original="images/labi.jpg" />
+							<p>Shanghai Restaurant Review: Kun Thai</p>
+							<span class="water-left">￥<span class="postage-number">3928</span></span>
+							<span class="iconfont icon-gouwuche water-right"></span>
+						</a>
+					</li>
+					<li class="waterfall">
+						<a href="#">
+							<img class="lazy" data-original="images/kouhong.jpg" />
+							<p>Shanghai Kun Thai</p>
+							<span class="water-left">￥<span class="postage-number">3928</span></span>
+							<span class="iconfont icon-gouwuche water-right"></span>
+						</a>
+					</li>
+					<li class="waterfall">
+						<a href="#">
+							<img class="lazy" data-original="images/amani.jpg" />
+							<p>Shanghai Restaurant Review: Kun Thai</p>
+							<span class="water-left">￥<span class="postage-number">3928</span></span>
+							<span class="iconfont icon-gouwuche water-right"></span>
+						</a>
+					</li>
+					<li class="waterfall">
+						<a href="#">
+							<img class="lazy" data-original="images/yashilandai.jpg" />
+							<p>Review: Kun Thai</p>
+							<span class="water-left">￥<span class="postage-number">3928</span></span>
+							<span class="iconfont icon-gouwuche water-right"></span>
+						</a>
+					</li>
+					<li class="waterfall">
+						<a href="#">
+							<img class="lazy" data-original="images/kouhong.jpg" />
+							<p>Shanghai Restaurant</p>
+							<span class="water-left">￥<span class="postage-number">3928</span></span>
+							<span class="iconfont icon-gouwuche water-right"></span>
+						</a>
+					</li>
+					<li class="waterfall">
+						<a href="#">
+							<img class="lazy" data-original="images/amani.jpg" />
+							<p>Kun Thai</p>
+							<span class="water-left">￥<span class="postage-number">3928</span></span>
+							<span class="iconfont icon-gouwuche water-right"></span>
+						</a>
+					</li>
+					<li class="waterfall">
+						<a href="#">
+							<img class="lazy" data-original="images/amani.jpg" />
+							<p>Shanghai Restaurant Review: Kun Thai</p>
+							<span class="water-left">￥<span class="postage-number">3928</span></span>
+							<span class="iconfont icon-gouwuche water-right"></span>
+						</a>
+					</li>
+					<li class="waterfall">
+						<a href="#">
+							<img class="lazy" data-original="images/yashilandai.jpg" />
+							<p>Review: Kun Thai</p>
+							<span class="water-left">￥<span class="postage-number">3928</span></span>
+							<span class="iconfont icon-gouwuche water-right"></span>
+						</a>
+					</li>
+					<li class="waterfall">
+						<a href="#">
+							<img class="lazy" data-original="images/kouhong.jpg" />
+							<p>Shanghai Restaurant</p>
+							<span class="water-left">￥<span class="postage-number">3928</span></span>
+							<span class="iconfont icon-gouwuche water-right"></span>
+						</a>
+					</li>
+				</ul>
+				<div class="no-products">
+					<div>没有更多宝贝了</div>
+				</div>
+			</div>
+		</div>		
+	</div>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/jaliswall.js" type="text/javascript"></script>
+	<script src="js/jquery.lazyload.js"></script>
+	<script>
+		$('.wall').jaliswall({ item: '.waterfall' });
+		$("img.lazy").lazyload({
+			effect: "fadeIn",
+			failurelimit : 10
+		});
+		
+	    var startX, startY; 
+	    document.addEventListener('touchstart',function (ev) { 
+	      	startX = ev.touches[0].pageX; 
+	      	startY = ev.touches[0].pageY; 
+	    }, false); 
+	    document.addEventListener('touchend',function (ev) { 
+	      	var endX, endY; 
+	      	endX = ev.changedTouches[0].pageX; 
+	      	endY = ev.changedTouches[0].pageY; 
+	      	var direction = GetSlideDirection(startX, startY, endX, endY); 
+	      	switch(direction) { 		
+		        case 0: 
+		            $('.jiantou2').css('color', '#ff0000');
+		            $('.jiantou1').css('color', '#8f8f94'); 
+		         	 break; 
+		        case 1: 
+		          	// 向上 
+		            $('.jiantou2').css('color', '#ff0000');
+		            $('.jiantou1').css('color', '#8f8f94');  
+		          	break; 
+		        case 2: 
+		          	// 向下 
+		          	$('.jiantou2').css('color', '#8f8f94');
+		          	$('.jiantou1').css('color', '#ff0000');
+		          	break; 
+		  
+		        default: 
+	      	} 
+	    }, false);
+		function GetSlideDirection(startX, startY, endX, endY) { 
+		    var dy = startY - endY; 
+		    //var dx = endX - startX; 
+		    var result = 0; 
+		    if(dy>0) {//向上滑动 
+		    	result=1; 
+		    }else if(dy<0){//向下滑动 
+		        result=2; 
+		    }else{ 
+		        result=0; 
+		    } 
+		    return result; 
+		};
+	</script>
+</body>
+</html>

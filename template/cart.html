@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<link rel="stylesheet" href="css/mui.min.css">
+	<link rel="stylesheet" href="css/style.css">
+	<!-- 字体图标 -->
+	<link rel="stylesheet" href="http://at.alicdn.com/t/font_259571_jmbdwkgo4etdquxr.css">
+	<style type="text/css">
+		#list {
+			/*避免导航边框和列表背景边框重叠，看起来像两条边框似得；*/
+			margin-top: -1px;
+		}
+
+		
+	</style>
+</head>
+<body>
+	<div class="layout cart-layout" id="app">
+		<header id="header" class="mui-bar mui-bar-nav ">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">Cart</h1>
+			<button class="mui-btn mui-btn-blue mui-btn-link mui-pull-right edit-btn" id="editBtn">Edit</button>
+			<button class="mui-btn mui-btn-blue mui-btn-link mui-pull-right done-btn" id="doneBtn">Done</button>
+		</header>
+		<nav class="mui-bar mui-bar-tab">
+			<a class="mui-tab-item" href="./home-page.html">
+				<span class="mui-icon iconfont icon-shanghu1"></span>
+				<span class="mui-tab-label">Home</span>
+			</a>
+			<a class="mui-tab-item mui-active" href="#cart">
+				<span class="mui-icon iconfont icon-gouwuche"><span class="mui-badge">9</span></span>
+				<span class="mui-tab-label">Cart</span>
+			</a>
+			<a class="mui-tab-item" href="./me.html">
+				<span class="mui-icon iconfont icon-me"></span>
+				<span class="mui-tab-label">Me</span>
+			</a>
+			<a class="mui-tab-item" href="./more.html">
+				<span class="mui-icon iconfont icon-iconfonthome"></span>
+				<span class="mui-tab-label">More</span>
+			</a>
+		</nav>
+		<div class="mui-content">
+
+			<div id="cart" class="cart mui-control-content mui-active">
+				<ul id="cartList" class="mui-table-view cart-table-view">
+					
+					<li class="mui-table-view-cell">
+						<div class="mui-slider-right mui-disabled">
+							<a class="mui-btn smart-theme-color">Delete</a>
+						</div>
+						<div class="mui-slider-handle">
+							<div class="mui-input-row mui-checkbox mui-left">
+								<div class="product-list-info">
+									<a href="login.html">
+										<p>itemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemit</p>
+									</a>
+									 <div class="product-buy-info clearfix">
+										<span class="product-list-price fl">￥<em class="price">23.00</em></span>
+										<span class="product-list-number fr">x<em class="number">1</em></span>
+									</div> 
+									<div class="sub-add">
+										<i class="iconfont icon-icon sub"></i>
+										<input type="text" value="1">
+										<i class="iconfont icon-jia add"></i>
+									</div>
+								</div>
+								<label>		
+									<a href="login.html">
+										<img src="images/prodeuctdemo.png" alt="">
+									</a>					
+									
+								</label>
+								<input name="checkbox" class="listCheckBox" value="23" number='1' type="checkbox" >
+							</div>
+						</div>
+					</li>
+					<li class="mui-table-view-cell">
+						<div class="mui-slider-right mui-disabled">
+							<a class="mui-btn smart-theme-color">Delete</a>
+						</div>
+						<div class="mui-slider-handle">
+							<div class="mui-input-row mui-checkbox mui-left">
+								<div class="product-list-info">
+									<a href="login.html">
+										<p>itemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemit</p>
+									</a>
+									 <div class="product-buy-info clearfix">
+										<span class="product-list-price fl">￥<em class="price">23.00</em></span>
+										<span class="product-list-number fr">x<em class="number">8</em></span>
+									</div> 
+									<div class="sub-add">
+										<i class="iconfont icon-icon sub"></i>
+										<input type="text" value="1">
+										<i class="iconfont icon-jia add"></i>
+									</div>
+								</div>
+								<label>		
+									<a href="login.html">
+										<img src="images/prodeuctdemo.png" alt="">
+									</a>					
+									
+								</label>
+								<input name="checkbox" class="listCheckBox" value="23" number='1' type="checkbox" >
+							</div>
+						</div>
+					</li>
+					<li class="mui-table-view-cell">
+						<div class="mui-slider-right mui-disabled">
+							<a class="mui-btn smart-theme-color">Delete</a>
+						</div>
+						<div class="mui-slider-handle">
+							<div class="mui-input-row mui-checkbox mui-left">
+								<div class="product-list-info">
+									<a href="login.html">
+										<p>itemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemit</p>
+									</a>
+									 <div class="product-buy-info clearfix">
+										<span class="product-list-price fl">￥<em class="price">23.00</em></span>
+										<span class="product-list-number fr">x<em class="number">8</em></span>
+									</div> 
+									<div class="sub-add">
+										<i class="iconfont icon-icon sub"></i>
+										<input type="text" value="1">
+										<i class="iconfont icon-jia add"></i>
+									</div>
+								</div>
+								<label>		
+									<a href="login.html">
+										<img src="images/prodeuctdemo.png" alt="">
+									</a>					
+									
+								</label>
+								<input name="checkbox" class="listCheckBox" value="23" number='1' type="checkbox" >
+							</div>
+						</div>
+					</li>
+					<li class="mui-table-view-cell">
+						<div class="mui-slider-right mui-disabled">
+							<a class="mui-btn smart-theme-color">Delete</a>
+						</div>
+						<div class="mui-slider-handle">
+							<div class="mui-input-row mui-checkbox mui-left">
+								<div class="product-list-info">
+									<a href="login.html">
+										<p>itemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemit</p>
+									</a>
+									 <div class="product-buy-info clearfix">
+										<span class="product-list-price fl">￥<em class="price">23.00</em></span>
+										<span class="product-list-number fr">x<em class="number">8</em></span>
+									</div> 
+									<div class="sub-add">
+										<i class="iconfont icon-icon sub"></i>
+										<input type="text" value="1">
+										<i class="iconfont icon-jia add"></i>
+									</div>
+								</div>
+								<label>		
+									<a href="login.html">
+										<img src="images/prodeuctdemo.png" alt="">
+									</a>					
+									
+								</label>
+								<input name="checkbox" class="listCheckBox" value="23" number='1' type="checkbox" >
+							</div>
+						</div>
+					</li>
+					<li class="mui-table-view-cell">
+						<div class="mui-slider-right mui-disabled">
+							<a class="mui-btn smart-theme-color">Delete</a>
+						</div>
+						<div class="mui-slider-handle">
+							<div class="mui-input-row mui-checkbox mui-left">
+								<div class="product-list-info">
+									<a href="login.html">
+										<p>itemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemitemit</p>
+									</a>
+									 <div class="product-buy-info clearfix">
+										<span class="product-list-price fl">￥<em class="price">23.00</em></span>
+										<span class="product-list-number fr">x<em class="number">8</em></span>
+									</div> 
+									<div class="sub-add">
+										<i class="iconfont icon-icon sub"></i>
+										<input type="text" value="1">
+										<i class="iconfont icon-jia add"></i>
+									</div>
+								</div>
+								<label>		
+									<a href="login.html">
+										<img src="images/prodeuctdemo.png" alt="">
+									</a>					
+									
+								</label>
+								<input name="checkbox" class="listCheckBox" value="23" number='1' type="checkbox" >
+							</div>
+						</div>
+					</li>
+					
+					
+				
+					
+				</ul>
+				<!-- 结算导航栏 -->
+				<nav class="settlement-box" id="checkAll">
+					<div class="mui-input-row mui-checkbox mui-left">
+						<label >All</label>
+						<input name="checkbox" id="checkAllInput" type="checkbox" >
+					</div>
+					<div class="total">
+						Total:<span>￥<em id="sumPrice">0</em></span>
+					</div>
+					<span class="buy-btn" id="toPay">To pay</span>
+					<span class="buy-btn do-delete" id="doDelete">Delete</span>
+				</nav>
+			</div>
+		</div>
+	</div>
+
+
+	<script src="js/mui.min.js"></script>
+	<script src="js/jquery.min.js"></script>
+
+
+	<script>
+		
+		
+		(function(mui) {
+			mui.init({
+				swipeBack:true //启用右滑关闭功能
+			});
+
+			// responseHeight ();
+
+			// $(window).resize(function () {          
+			//     responseHeight ();
+			// });
+
+			// function responseHeight () {
+			// 	$('.product-list-info').each(function(index, el) {
+			// 		$(this).height($('.mui-input-row.mui-checkbox img').height());
+			// 	});
+			// }
+			
+			//拖拽后显示操作图标，点击操作图标删除元素；
+			var btnArray = ['Confirm', 'Cancel'];
+			mui('#cartList').on('tap', '.mui-btn', function(event) {
+				var elem = this;
+				var li = elem.parentNode.parentNode;
+				console.log(li);
+				mui.confirm('确认删除该条记录？', 'Hello MUI', btnArray, function(e) {
+					if (e.index == 0) {
+						var i = 2;
+						if (i===2) {
+							
+							li.parentNode.removeChild(li);
+							cartIsEmpty ();
+							checkedValues();
+							AllLight();
+						} else {
+							mui.swipeoutClose(li);
+							mui.toast('欢迎体验Hello MUI');
+						}
+
+					} else {
+						setTimeout(function() {
+							mui.swipeoutClose(li);
+						}, 0);
+					}
+				});
+			});
+			
+			mui('#header').on('tap', '.edit-btn', function(event) {
+				var doneBtn = document.getElementById('doneBtn');
+				var doDelete = document.getElementById('doDelete');
+				var doDelete = document.getElementById('doDelete');
+				doneBtn.style.display = 'block';
+				// h('#doneBtn').show();
+				toPay.style.display = 'none';
+				doDelete.style.display = 'block';
+				this.style.display = "none";
+				mui('.product-buy-info').each(function(){
+					this.style.display = "none";
+				});
+				mui('.sub-add').each(function(){
+					this.style.display = "block";
+				});
+				$('.product-buy-info .number').each(function(index, el) {
+					$(this).parents('.product-list-info').find('input').val($(this).text());
+				});
+				mui('.mui-table-view-cell').each(function(index, el) {
+					mui.swipeoutClose(this);
+				});
+				sunAddColor ();
+
+			});
+			
+			mui('#header').on('tap', '#doneBtn', function(event) {
+				var editBtn = document.getElementById('editBtn');
+				var doneBtn = document.getElementById('doneBtn');
+				var doDelete = document.getElementById('doDelete');
+				var doDelete = document.getElementById('doDelete');
+
+				editBtn.style.display = 'block';
+				doneBtn.style.display = 'none';
+				toPay.style.display = 'block';
+				doDelete.style.display = 'none';
+
+				mui('.product-buy-info').each(function(){
+					this.style.display = "block";
+				});
+				mui('.sub-add').each(function(){
+					this.style.display = "none";
+				});
+				$('.product-buy-info .number').each(function(index, el) {
+					$(this).parents('.product-list-info').find('input').val($(this).text());
+				});
+				mui('.mui-table-view-cell').each(function(index, el) {
+					mui.swipeoutClose(this);
+				});0
+			});
+
+			mui('#checkAll').on('tap', '#doDelete', function(event) {
+				if($('input:checkbox[class=listCheckBox]:checked').length === 0) {
+					mui.toast('请勾选要删除的商品');
+				} else {
+					mui.confirm('确认删除所有选中的商品', 'Hello MUI', btnArray, function(e) {
+						if (e.index == 0) {
+							$('input:checkbox[class=listCheckBox]:checked').each(function(index, el) {
+								$(this).parents('.mui-table-view-cell').remove();
+							});
+							checkedValues();
+							cartIsEmpty ();
+							AllLight();
+							cartIsEmpty ();
+						}
+					});
+				}
+			});
+
+			mui('#checkAll').on('tap', '#toPay', function(event) {
+				if($('input:checkbox[class=listCheckBox]:checked').length === 0) {
+					mui.toast('请勾选要支付的商品');
+				} else {
+					// ajax
+				}
+			});
+			
+			
+
+
+			
+			mui('.settlement-box').on('change', 'input', function() {
+				var value = this.checked;
+				mui('.listCheckBox').each(function() {
+					if (value) {
+						this.checked = true;
+					} else {
+						this.checked = false;
+					}
+				});
+				checkedValues();
+
+			});
+
+			mui('.mui-table-view-cell').on('change', 'input', function() {
+				AllLight();
+				checkedValues();
+
+			});
+
+
+			
+			//所有选项选中all亮 
+			function AllLight() {
+				var checkAllInput = document.getElementById('checkAllInput');
+				var flag = 0;
+				mui('.listCheckBox').each(function(index, el) {
+					if (this.checked) {
+						flag++;
+					}
+				});
+				if(flag==mui('.listCheckBox').length) {
+					checkAllInput.checked = true;
+					
+				} else {
+					checkAllInput.checked = false;
+					
+				}
+			}
+			
+			
+			//购物车加减
+			mui('.sub-add').on('tap','.sub',function(){
+	            var n = this.nextElementSibling.value || 2;
+				var num = parseInt(n)-1;
+		        if (num == 1) {
+		           this.style.color = "#D5D5D5";
+		        }
+				if(num==0){
+		            return;
+		        }
+				this.nextElementSibling.value = num;
+				setProductNumber(this);
+				checkedValues();
+
+	        });
+
+	        mui('.sub-add').on('tap','.add',function(){
+	            this.previousElementSibling.previousElementSibling.style.color = "#A9A9A9";
+			 	var n = this.previousElementSibling.value || 1;
+			 	var num=parseInt(n)+1;
+			 	this.previousElementSibling.value = num;
+			 	setProductNumber(this);
+			 	checkedValues();
+	        });
+			
+
+			mui('.mui-bar-tab').on('tap','a',function(){
+	            window.location.href = this.getAttribute('href');
+	        });
+	        mui('.product-list-info').on('tap','a',function(){
+	            window.location.href = this.getAttribute('href');
+	        });
+			
+			//购物车空跳转空购物车
+	        function cartIsEmpty () {
+		        if (mui('.mui-table-view-cell').length===0) {
+		            location.href="cart-empty.html";//跳到空的购物车页面
+		        }
+		    }
+
+			
+			//算总价格
+		    function checkedValues(){ 
+				var arr=new Array(); 
+				var arr2=new Array(); 
+				var sumPriceNumber = 0;
+				var checkbox=document.getElementsByClassName('listCheckBox');
+				var sumPrice = document.getElementById('sumPrice');
+				for(var i=0;i<checkbox.length;i++){ 
+					if(checkbox[i].checked==true){ 
+						arr.push($(checkbox[i]).siblings('.product-list-info').find('.price').text());
+						arr2.push($(checkbox[i]).siblings('.product-list-info').find('.number').text());
+					} 
+				}
+				for(var i=0;i<arr.length;i++){
+					sumPriceNumber +=arr[i]*arr2[i];
+				}
+				sumPrice.innerText = sumPriceNumber;
+			}
+
+			function setProductNumber(element) {
+				$(element).parents('.product-list-info').find('.number').text($(element).siblings('input').val());
+			}
+
+			function sunAddColor () {
+				$('.sub-add input').each(function(index, el) {
+					if($(this).val()>1) {
+						$(this).prev().css({"color":"#A9A9A9"});
+					}
+				});
+			}
+	        
+		})(mui);
+
+		
+
+
+	   
+	</script>
+</body>
+</html>

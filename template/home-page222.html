@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<link rel="stylesheet" href="css/mui.min.css">
+	<link rel="stylesheet" href="css/swiper.min.css" />
+	<link rel="stylesheet" type="text/css" href="css/mui.picker.all.css"/>
+	<link rel="stylesheet" type="text/css" href="css/mui.poppicker.css"/>
+	<link rel="stylesheet" href="css/style.css">
+	<!-- 字体图标 -->
+	<link rel="stylesheet" href="http://at.alicdn.com/t/font_259571_yqwj8mnylwwdygb9.css">
+</head>
+<body onload="loaded()">
+	
+	<nav class="mui-bar mui-bar-tab">
+		<a class="mui-tab-item mui-active" href="./home-page.html">
+			<span class="mui-icon iconfont icon-shanghu1"></span>
+			<span class="mui-tab-label">Home</span>
+		</a>
+		<a class="mui-tab-item" href="./cart.html">
+			<span class="mui-icon iconfont icon-gouwuche"><span class="mui-badge">5</span></span>
+			<span class="mui-tab-label">Cart</span>
+		</a>
+		<a class="mui-tab-item" href="./me.html">
+			<span class="mui-icon iconfont icon-me"></span>
+			<span class="mui-tab-label">Me</span>
+		</a>
+		<a class="mui-tab-item" href="./more.html">
+			<span class="mui-icon iconfont icon-iconfonthome"></span>
+			<span class="mui-tab-label">More</span>
+		</a>
+	</nav>
+	<div class="home-search-group">
+		<div class="clearfix">
+			<span id='showUserPicker'>All <i class="fr iconfont icon-xiangxiajiantou"></i></span>
+			<input id="searchInput" class="searchInput" type="text" placeholder="Search"/>
+			<i class="iconfont icon-sousuo"></i>
+		</div>
+	</div>
+	<div id="searchBg" class="search-bg"></div>
+	<span id="backBtn" class="iconfont icon-fanhuidingbu"></span>
+	
+	<div class="layout home-layout" id="wrapper">
+		<div id="scroller">
+			
+			
+			<div class="mui-content">
+				
+				<!-- 首页轮播开始 -->
+				<div class="home-carousel">
+				 	<div class="swiper-container home-banner-carousel">
+				        <div class="swiper-wrapper">
+				            <div class="swiper-slide"><a href="#"><img src="images/lb.jpg" alt=""></a></div>
+				            <div class="swiper-slide"><a href="#"><img src="images/lb.jpg" alt=""></a></div>
+				            <div class="swiper-slide"><a href="#"><img src="images/lb.jpg" alt=""></a></div>
+				            <div class="swiper-slide"><a href="#"><img src="images/lb.jpg" alt=""></a></div>
+			    			</div>
+		    			<div class="swiper-pagination"></div>
+				</div>
+				<!-- 首页轮播结束 -->
+				<div class="home-section-box">
+					<div class="section-head section-head-one">
+						<span class="section-head-text">Featured shops</span>
+						<div class="home-line"></div>
+						<a href="#" class="home-more">More</a>
+					</div>
+					<div class="home-product-carousel-box">
+						<div class="swiper-container home-product-carousel">
+					        <div class="swiper-wrapper">
+					            <div class="swiper-slide product-lists">
+					            		<a href="#">
+					            			<img src="images/products.jpg" alt="" />
+										<p>adidas</p>
+					            		</a>
+					            </div>
+					            <div class="swiper-slide product-lists">
+					            		<a href="#">
+					            			<img src="images/products.jpg" alt="" />
+										<p>adidas</p>
+					            		</a>
+					            </div>
+					            <div class="swiper-slide product-lists">
+					            		<a href="#">
+					            			<img src="images/products.jpg" alt="" />
+										<p>adidas</p>
+					            		</a>
+					            </div>
+					            <div class="swiper-slide product-lists">
+					            		<a href="#">
+					            			<img src="images/products.jpg" alt="" />
+										<p>adidas</p>
+					            		</a>
+					            </div>
+					            <div class="swiper-slide product-lists">
+					            		<a href="#">
+					            			<img src="images/products.jpg" alt="" />
+										<p>adidas</p>
+					            		</a>
+					            </div>
+					            <div class="swiper-slide product-lists">
+					            		<a href="#">
+					            			<img src="images/products.jpg" alt="" />
+										<p>adidas</p>
+					            		</a>
+					            </div>
+					            
+					        </div>
+					        <!-- Add Pagination -->
+					        <div class="swiper-scrollbar"></div>
+					    </div>
+					</div>
+				</div>
+				<div class="home-ad">
+					<a href="#">
+						<img src="images/home-ad1.jpg" alt="" />
+					</a>
+				</div>
+				<div class="home-section-box">
+					<div class="section-head">
+						<span class="section-head-text">Featured products</span>
+						<div class="home-line home-line-two"></div>
+						<a href="#" class="home-more">More</a>
+					</div>
+					<div class="home-product-carousel-box home-product-carousel-box2">
+						<div class="swiper-container home-product-carousel">
+					        <div class="swiper-wrapper">
+					            <div class="swiper-slide product-lists">
+					            		<a href="#">
+					            			<img src="images/products.jpg" alt="" />
+											<p>adidasadidasaddidasadidasaddidasadidasaddidasadidasaddidasadidasadidasadidasadidasadidasadidas</p>
+											<p>￥430.50</p>
+											<p>￥349.50</p>
+					            		</a>
+					            </div>
+					            <div class="swiper-slide product-lists">
+					            		<a href="#">
+					            			<img src="images/products.jpg" alt="" />
+											<p>adidas</p>
+											<p>￥430.50</p>
+											<p>￥349.50</p>
+					            		</a>
+					            </div>
+					            <div class="swiper-slide product-lists">
+					            		<a href="#">
+					            			<img src="images/products.jpg" alt="" />
+											<p>adidas</p>
+											<p>￥430.50</p>
+											<p>￥349.50</p>
+					            		</a>
+					            </div>
+					            <div class="swiper-slide product-lists">
+					            		<a href="#">
+					            			<img src="images/products.jpg" alt="" />
+											<p>adidas</p>
+											<p>￥430.50</p>
+											<p>￥349.50</p>
+					            		</a>
+					            </div>
+					            <div class="swiper-slide product-lists">
+					            		<a href="#">
+					            			<img src="images/products.jpg" alt="" />
+											<p>adidas</p>
+											<p>￥430.50</p>
+											<p>￥349.50</p>
+					            		</a>
+					            </div>
+					            <div class="swiper-slide product-lists">
+					            		<a href="#">
+					            			<img src="images/products.jpg" alt="" />
+											<p>adidas</p>
+											<p>￥430.50</p>
+											<p>￥349.50</p>
+					            		</a>
+					            </div>
+					            
+					        </div>
+					        <!-- Add Pagination -->
+					        <div class="swiper-scrollbar"></div>
+					    </div>
+					</div>
+				</div>
+				<div class="home-ad">
+					<a href="#">
+						<img src="images/home-ad2.jpg" alt="" />
+					</a>
+				</div>
+				<div class="home-section-box">
+					<div class="section-head">
+						<span class="section-head-text">Editor’s pick</span>
+						<div class="home-line home-line-three"></div>
+						<a href="#" class="home-more">More</a>
+					</div>
+					<ul class="mui-table-view result-ul home-pick-list">
+						<li class="mui-table-view-cell">
+							<a href="#">
+								<img class="list-li-img" src="images/home-product1.jpg">
+								<div class="product-list-info">
+									<p>itemitemitmitemitemitemitemitemitmitemitemitemitemitemitmitemitemitemitemitemitmitemitemitem</p>
+									<em>2017-10-24</em>
+								</div>
+							</a>
+						</li>
+						<li class="mui-table-view-cell">
+							<a href="#">
+								<img class="list-li-img" src="images/home-product2.jpg">
+								<div class="product-list-info">
+									<p>itemitemitmitemitemitemitemitemitmitemitemitemitemitemitmitemitemitemitemitemitmitemitemitem</p>
+									<em>2017-10-24</em>
+								</div>
+							</a>
+						</li>	
+						<li class="mui-table-view-cell">
+							<a href="#">
+								<img class="list-li-img" src="images/home-product3.jpg">
+								<div class="product-list-info">
+									<p>itemitemitmitemitemitemitemitemitmitemitemitemitemitemitmitemitemitemitemitemitmitemitemitem</p>
+									<em>2017-10-24</em>
+								</div>
+							</a>
+						</li>	
+					</ul>
+				</div>
+				<div class="home-ad">
+					<a href="me.html">
+						<img src="images/home-ad3.jpg" alt="" />
+					</a>
+				</div>
+				<div class="classification">
+					<ul class="mui-table-view">
+						<li class="mui-table-view-cell">
+							<a href="#">
+								<img src="images/home-class1.jpg" alt="" />
+							</a>
+						</li>
+						<li class="mui-table-view-cell">
+							<a href="#">
+								<img src="images/home-class2.jpg" alt="" />
+							</a>
+						</li>
+						<li class="mui-table-view-cell">
+							<a href="#">
+								<img src="images/home-class3.jpg" alt="" />
+							</a>
+						</li>
+						<li class="mui-table-view-cell">
+							<a href="#">
+								<img src="images/home-class4.png" alt="" />
+							</a>
+						</li>
+					</ul>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+
+	<script src="js/mui.min.js"></script>
+	<script src="js/mui.picker.min.js"></script>
+	<script src="js/mui.poppicker.js"></script>
+	<script src="js/swiper.min.js"></script>
+	<!--<script src="js/iscroll.js"></script>-->
+	<script src="js/iscroll-probe.js"></script>
+	<script>
+		
+		
+		
+
+
+		mui.init({
+			swipeBack:true //启用右滑关闭功能
+		});
+		
+		//		底部页面跳转
+		// mui('body').on('tap','a',function(){
+  //           window.location.href = this.getAttribute('href');
+  //      	});
+       
+		//     返回顶部按钮
+       
+       
+		var myScroll;
+		var position;
+		function loaded () {
+			myScroll = new IScroll('#wrapper', { probeType: 3, mouseWheel: true });
+			myScroll.on('scroll', updatePosition);
+			myScroll.on('scrollEnd', updatePosition);
+			document.getElementById('backBtn').addEventListener('tap',function(){
+	       		myScroll.scrollTo(0, 0, 1000);
+	       });
+		}
+		function updatePosition () {;
+			var backBtn = document.getElementById('backBtn'); 
+			if(this.y > -300 && this.y < 0){
+				var opacity = Math.abs(this.y)/300;
+				console.log(opacity);
+				document.getElementById('searchBg').style.opacity = opacity;
+			}
+			if (this.y < -300) {
+				document.getElementById('searchBg').style.opacity = 1;
+			}
+			if (this.y > -20 && this.y < 0) {
+				document.getElementById('searchBg').style.opacity = 0;
+			}
+			if(this.y<-300) {
+				backBtn.style.display = "block";
+			} else {
+				backBtn.style.display = "none";
+			}
+		}
+		
+		// document.addEventListener('touchmove', function (e) { e.preventDefault(); }, isPassive() ? {
+		// 	capture: false,
+		// 	passive: false
+		// } : false);
+		// function isPassive() {
+		//     var supportsPassiveOption = false;
+		//     try {
+		//         addEventListener("test", null, Object.defineProperty({}, 'passive', {
+		//             get: function () {
+		//                 supportsPassiveOption = true;
+		//             }
+		//         }));
+		//     } catch(e) {}
+		//     return supportsPassiveOption;
+		// }
+		
+		//		首页第一个轮播
+        var homeBannerCarousel = new Swiper('.home-banner-carousel',{
+			loop: true,
+			autoplay: 4000,
+			speed: 1000,
+			autoplayDisableOnInteraction: false,
+			pagination : '.swiper-pagination',
+			paginationClickable :true				
+		});
+		//		首页第二个轮播
+		var homeProductCarousel = new Swiper('.home-product-carousel',{
+	        scrollbar: '.swiper-scrollbar',
+	        scrollbarHide: true,
+	        slidesPerView: 'auto',
+	        freeMode : true,
+	        spaceBetween: 5,
+	        slidesPerView: 3.5,
+	        grabCursor: true
+		});
+		//搜索分类
+		var userPicker = new mui.PopPicker();
+		userPicker.setData([{
+			value: 'All',
+			text: 'All'
+		},{
+			value: 'Shops',
+			text: 'Shops'
+		}, {
+			value: 'Products',
+			text: 'Products'
+		}, {
+			value: 'Ticketing',
+			text: 'Ticketing'
+		}, {
+			value: 'Coupons',
+			text: 'Coupons'
+		}]);
+		var showUserPickerButton = document.getElementById('showUserPicker');
+		showUserPickerButton.addEventListener('tap', function(event) {
+			userPicker.show(function(items) {
+				showUserPickerButton.innerHTML = items[0].text + '<i class="iconfont icon-xiangxiajiantou fr"></i>';
+			});
+		}, false);
+
+
+			
+		  	
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<link rel="stylesheet" href="css/mui.min.css">
+	<link rel="stylesheet" href="css/style.css">
+	<!-- 字体图标 -->
+	<link rel="stylesheet" href="http://at.alicdn.com/t/font_259571_py0uecagdjrcz0k9.css">
+	<style type="text/css">
+		#list {
+			/*避免导航边框和列表背景边框重叠，看起来像两条边框似得；*/
+			margin-top: -1px;
+		}
+	</style>
+</head>
+<body>
+	<div class="layout home-layout" id="app">
+		<header id="header" class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">Cart</h1>
+		</header>
+		<nav class="mui-bar mui-bar-tab">
+			<a class="mui-tab-item" href="./home-page.html">
+				<span class="mui-icon iconfont icon-shanghu1"></span>
+				<span class="mui-tab-label">Home</span>
+			</a>
+			<a class="mui-tab-item mui-active" href="./cart.html">
+				<span class="mui-icon iconfont icon-gouwuche"><span class="mui-badge">9</span></span>
+				<span class="mui-tab-label">Cart</span>
+			</a>
+			<a class="mui-tab-item" href="./me.html">
+				<span class="mui-icon iconfont icon-me"></span>
+				<span class="mui-tab-label">Me</span>
+			</a>
+			<a class="mui-tab-item" href="./more.html">
+				<span class="mui-icon iconfont icon-iconfonthome"></span>
+				<span class="mui-tab-label">More</span>
+			</a>
+		</nav>
+		<div class="mui-content">
+			<div class="cart-empty-box">
+				<span class="mui-icon iconfont icon-gouwuche"></span>
+				<p>Your shopping cart is empty</p>
+				<a href="home-page.html">start shopping</a>
+			</div>
+		</div>
+	</div>
+
+
+	<script src="js/mui.min.js"></script>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/vue.js"></script>
+	<script>
+
+	    mui.init({
+			swipeBack:true //启用右滑关闭功能
+		});
+	    mui('.mui-bar-tab').on('tap','a',function(){
+            window.location.href = this.getAttribute('href');
+        });
+					
+	</script>
+</body>
+</html>

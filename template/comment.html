@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>comment</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<link rel="stylesheet" href="css/mui.min.css">
+	<link rel="stylesheet" href="css/style.css">
+	<!-- 字体图标 -->
+	<link rel="stylesheet" href="http://at.alicdn.com/t/font_259571_jmbdwkgo4etdquxr.css">
+</head>
+<body>
+	<div class="layout search-result-layout">
+		<header id="header" class="mui-bar mui-bar-nav comment-mui-bar">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<span class="comment-title1 comment-title-active">All</span>
+			<span class="comment-title2">With Image</span>
+			<a href="">
+				<span class="iconfont icon-gouwuche comment-icon-gouwuche"></span>
+			</a>
+		</header>
+		<div class="mui-content comment-content">
+			<div class="comment-box comment-box-all">
+				<div class="comment-box-list">
+					<p class="clearfix comment-name">
+						<img src="images/yl.png" alt="" />
+						<span>miller</span>
+					</p>
+					<div class="comment-message">
+						<span>2017-10-24</span>
+						<span>Color Category：Black</span>
+					</div>
+					<p class="comment-container">Comment Comment Comment Comment Comment Comment Comment </p>
+				</div>
+			</div>
+			<div class="comment-box comment-box-all">
+				<div class="comment-box-list">
+					<p class="clearfix comment-name">
+						<img src="images/yl.png" alt="" />
+						<span>miller</span>
+					</p>
+					<div class="comment-message">
+						<span>2017-10-24</span>
+						<span>Color Category：Black</span>
+					</div>
+					<p class="comment-container">Comment Comment Comment Comment Comment Comment Comment </p>
+				</div>
+			</div>
+			<div class="comment-box comment-box-all withImg">
+				<div class="comment-box-list">
+					<p class="clearfix comment-name">
+						<img src="images/yl.png" alt="" />
+						<span>miller</span>
+					</p>
+					<div class="comment-message">
+						<span>2017-10-24</span>
+						<span>Color Category：Black</span>
+					</div>
+					<p class="comment-container">Comment Comment Comment Comment Comment Comment Comment </p>
+					<div class="comment-img">
+						<img src="images/commit-img.jpg" alt="" data-preview-src="" data-preview-group="1">
+						<img src="images/commit-img.jpg" alt="" data-preview-src="" data-preview-group="1">
+						<img src="images/commit-img.jpg" alt="" data-preview-src="" data-preview-group="1">
+					</div>
+				</div>                                                       
+			</div>
+		</div>	
+	</div>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/mui.min.js"></script>
+	<script src="js/mui.zoom.js"></script>
+	<script src="js/mui.previewimage.js"></script>
+	<script>
+		$(function(){
+			$(".comment-title2").click(function() {
+	            $(".comment-title1").removeClass("comment-title-active");
+	            $(this).addClass("comment-title-active");
+				$.each($('.comment-box'),function(index,item){
+				    if($(this).hasClass('withImg') == false) {
+				        $(this).css("display","none");
+					}
+				});
+			});
+			$(".comment-title1").click(function() {
+	            $(".comment-title2").removeClass("comment-title-active");
+	            $(this).addClass("comment-title-active");
+	            $(".comment-box").css("display","block");
+			});
+
+			mui.previewImage();
+	   	})(mui);
+	</script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>invoice</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<link rel="stylesheet" href="css/mui.min.css">
+	<link href="css/mui.picker.all.css" rel="stylesheet" />
+	<link href="css/mui.poppicker.css" rel="stylesheet" />
+	<link rel="stylesheet" href="css/style.css">
+	<!-- 字体图标 -->
+	<link rel="stylesheet" href="http://at.alicdn.com/t/font_259571_py0uecagdjrcz0k9.css">
+</head>
+<body>
+	<div class="layout invoice-layout">
+		<header id="header" class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">Invoice Info</h1>
+		</header>
+		<div class="mui-content addressContent">
+			<div class="mui-input-group">
+				<div class="mui-input-row">
+					<label>Company&nbsp;Name：</label>
+					<input type="text"  id="name" placeholder="" >
+				</div>				
+				<div class="mui-input-row">
+					<label>Company&nbsp;Address：</label>
+					<input type="text"  id="textarea" placeholder="" >
+				</div>	
+				<div class="mui-input-row">
+					<label>Tax&nbsp;Number：</label>
+					<input type="text"  id="number" placeholder="" >
+				</div>			
+			</div> 
+		</div>
+		<button id="subto" class="invoice-btn">Done</button>
+	</div>
+
+	<script src="js/mui.min.js"></script>
+	<script>
+		(function(mui) {
+			var subto = document.getElementById('subto');
+			subto.addEventListener('tap',function() {
+				/*验证税号 15或者17或者18或者20位字母、数字组成*/
+				var tel = /^[A-Z0-9]{15}$|^[A-Z0-9]{17}$|^[A-Z0-9]{18}$|^[A-Z0-9]{20}$/;
+				var name = document.getElementById('name').value;
+				var theTextarea = document.getElementById('textarea').value;
+				var theNumber = document.getElementById('number').value;
+				if(name == '') {
+					mui.toast('Please enter your company name!');
+					return false
+				}else if(theTextarea == '') {		
+					mui.toast('Please enter your company address!');
+					return false
+				}else if(!tel.test(theNumber)) {
+					mui.toast('Please enter a right tax number!');
+					return false
+				}
+				return mui.toast('ok');
+			});
+		})(mui);
+	</script>
+</body>
+</html>

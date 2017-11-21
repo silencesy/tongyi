@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>shopOwner-home</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<link rel="stylesheet" href="css/mui.min.css">
+	<link rel="stylesheet" href="css/swiper.min.css" />
+	<link rel="stylesheet" href="css/style.css">
+	<!-- 字体图标 -->
+	<link rel="stylesheet" href="http://at.alicdn.com/t/font_259571_mdngvvut94ml5wmi.css">
+	<style>
+
+	</style>
+</head>
+<body>	
+	<div class="layout layout-shop-owner">
+		<div class="shop-header">
+			<div class="shop-header-left">
+				<img src="images/shop-name.png" alt="">
+				<span>Bluewater</span>
+			</div>
+			<div class="shop-header-right">
+				<span class="iconfont icon-shoucang"></span>
+				<a href="">
+					<span class="iconfont icon-sousuo"></span>		
+				</a>	
+			</div>
+		</div>
+		<!-- 头部置顶导航开始 -->
+		<div id="mainMenuBarAnchor"></div>
+		<div class="mui-bar-top" id="mainMenuBar">
+			<a class="mui-tab-item shop-nav" href="">
+				<span class="mui-tab-label">Homepage</span>
+			</a>
+			<span class="shop-line"></span>
+			<a class="mui-tab-item shop-nav" href="">
+				<span class="mui-tab-label">All Category</span>
+			</a>
+			<span class="shop-line"></span>
+			<a class="mui-tab-item shop-nav" href="">
+				<span class="mui-tab-label">New Arrivals</span>
+			</a>
+			<span class="shop-line"></span>
+			<a class="mui-tab-item shop-nav" href="">
+				<span class="mui-tab-label">Category</span>
+			</a>
+		</div>
+		<!-- 头部置顶导航结束 -->
+
+		<!-- 底部nav开始 -->
+		<nav class="mui-bar mui-bar-tab mui-bar-shop">
+			<a class="mui-tab-item shop-nav" href="">
+				<span class="mui-tab-label">Best Sellers</span>
+			</a>
+			<span class="bottom-line"></span>
+			<a class="mui-tab-item shop-nav" href="">
+				<span class="mui-tab-label">Category</span>
+			</a>
+			<span class="bottom-line"></span>
+			<a class="mui-tab-item shop-nav" href="">
+				<span class="mui-tab-label">SecKill</span>
+			</a>
+			<span class="bottom-line"></span>
+			<a class="mui-tab-item shop-nav" href="">
+				<span class="iconfont icon-kefu"></span>
+				<span class="mui-tab-label">Live Chat</span>
+			</a>
+		</nav>		
+		<!-- 底部nav结束 -->
+		
+		<div class="mui-content">			
+			<!-- 轮播开始 -->
+			<div class="home-carousel shop-carousel">
+			 	<div class="swiper-container home-banner-carousel">
+			        <div class="swiper-wrapper">
+			            <div class="swiper-slide"><a href="#"><img src="images/shop-lunbo1.jpg" alt=""></a></div>
+			            <div class="swiper-slide"><a href="#"><img src="images/shop-lunbo1.jpg" alt=""></a></div>
+			            <div class="swiper-slide"><a href="#"><img src="images/shop-lunbo1.jpg" alt=""></a></div>
+			            <div class="swiper-slide"><a href="#"><img src="images/shop-lunbo1.jpg" alt=""></a></div>
+		    		</div>
+	    		<div class="swiper-pagination"></div>
+			</div>
+			<!-- 轮播结束 -->
+			<div class="shop-section-head">
+				<div class="section-head-title">Featured shops</div>
+			</div>
+			<div class="shop-products">
+				<a href="">
+					<img src="images/shop-content_01.jpg" alt="">
+				</a>
+				<a href="">
+					<img src="images/shop-content_02.jpg" alt="">
+				</a>
+				<a href="">
+					<img src="images/shop-content_03.jpg" alt="">
+				</a>
+			</div>
+		</div>
+	</div>
+
+	<script src="js/jquery.min.js"></script>	
+	<script src="js/swiper.min.js"></script>
+	<script>
+		$(function(){
+
+	        var homeBannerCarousel = new Swiper('.home-banner-carousel',{
+				loop: true,
+				autoplay: 4000,
+				speed: 1000,
+				autoplayDisableOnInteraction: false,
+				pagination : '.swiper-pagination',
+				paginationClickable :true				
+			});
+	        
+	        var $window = $(window),
+	         	$mainMenuBar = $('#mainMenuBar'),
+	          	$mainMenuBarAnchor = $('#mainMenuBarAnchor');
+	          	
+	      	$window.scroll(function() {
+	          	var window_top = $window.scrollTop();
+	          	var div_top = $mainMenuBarAnchor.offset().top;
+	          	console.log(div_top);
+	          	if (window_top > div_top) {
+	              	$mainMenuBar.addClass('stick');
+	              	$mainMenuBarAnchor.height($mainMenuBar.height());
+	          	}else {
+	              	$mainMenuBar.removeClass('stick');
+	              	$mainMenuBarAnchor.height(0);
+	          	}
+	  		});
+			
+			$(".icon-shoucang").click(function(){
+			  $(".icon-shoucang").toggleClass("icon-shoucang1");
+			});
+		});
+	</script>
+</body>
+</html>
